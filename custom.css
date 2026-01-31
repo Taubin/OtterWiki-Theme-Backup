@@ -1,0 +1,519 @@
+/* OtterWiki "Mint & Charcoal" Theme - Perfect Version
+   Combines: Nice backgrounds + Beautiful callout boxes + Fixed spacing + Hidden line numbers
+*/
+
+@import url('https://fonts.bunny.net/css?family=inter:400,500,600,700|fira-code:400,500');
+
+:root {
+    /* Primary Colors */
+    /*
+    --primary: #aadbbf;
+    --primary-light: #b4dfc6;
+    --primary-dark: #9dd4b3;
+    */
+
+    --primary: #f5b461;        /* Warm amber/gold */
+    --primary-light: #ffc77d;
+    --primary-dark: #e89f47;
+
+    /* Backgrounds - Nice charcoal tones */
+    --bg-primary: #1a1d23;        /* Main background - soft charcoal (NOT #121212) */
+    --bg-secondary: #22252e;      /* Elevated surfaces */
+    --bg-tertiary: #2a2d37;       /* Hover states */
+    --bg-code: #1e2129;           /* Code blocks */
+
+    /* Text Colors */
+    --text-primary: #eeeeee;
+    --text-secondary: #b8b8b8;
+    --text-muted: #888888;
+
+    /* Borders */
+    --border-color: #3f3f3f;
+    --border-light: #555555;
+
+    /* Semantic Colors */
+    --success: #47d5a6;
+    --warning: #d7ac61;
+    --danger: #ff8080;
+    --info: #5c93ed;
+
+    /* Callout Background Tints */
+    --bg-note: rgba(92, 147, 237, 0.15);
+    --bg-tip: rgba(71, 213, 166, 0.15);
+    --bg-warning: rgba(215, 172, 97, 0.15);
+    --bg-danger: rgba(255, 128, 128, 0.15);
+}
+
+/* ==================== GLOBAL ==================== */
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* ==================== SIDEBAR ==================== */
+.sidebar,
+#sidebar,
+.bs-sidebar {
+    background-color: #14161b !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+.sidebar a,
+#sidebar a,
+.nav-link {
+    color: var(--primary) !important;
+    transition: all 0.2s ease;
+}
+
+.sidebar a:hover,
+#sidebar a:hover {
+    color: var(--primary-light) !important;
+    background-color: var(--bg-tertiary) !important;
+}
+
+/* ==================== MAIN CONTENT - FIXED WHITESPACE ==================== */
+.container,
+.content,
+main,
+article,
+.otter-content {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    max-width: none !important;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary) !important;
+}
+
+h1 {
+    font-size: 2.5rem !important;
+    margin-top: 2rem !important;
+}
+
+h2 {
+    font-size: 2rem !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+h3 { font-size: 1.75rem !important; }
+h4 { font-size: 1.5rem !important; }
+
+p, li, td, th,
+.otter-content p,
+.otter-content li,
+.otter-content td,
+.otter-content th {
+    font-size: 19px !important;
+    line-height: 1.75 !important;
+    color: var(--text-primary) !important;
+}
+
+a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: var(--primary-light) !important;
+    text-decoration: underline !important;
+}
+
+/* ==================== TABLES ==================== */
+table {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+
+th {
+    background-color: var(--bg-code) !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+    padding: 12px !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+td {
+    padding: 12px !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+tr:hover {
+    background-color: var(--bg-tertiary) !important;
+}
+
+/* ==================== CODE BLOCKS ==================== */
+
+code {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 17px !important;
+    color: var(--primary-light) !important;
+    background-color: var(--bg-tertiary) !important;
+    padding: 3px 6px !important;
+    border-radius: 4px !important;
+}
+
+pre {
+    background-color: var(--bg-code) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    overflow-x: auto !important;
+    margin: 1.5rem 0 !important;
+}
+
+pre code {
+    background-color: transparent !important;
+    padding: 0 !important;
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+}
+
+/* Fix syntax highlighting errors */
+.highlight .err {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* ==================== OTTERWIKI CALLOUT BOXES (quote-alert) ==================== */
+
+/* Base quote-alert styling */
+.quote-alert,
+blockquote.quote-alert {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-left: 6px solid var(--primary) !important;
+    border-radius: 8px !important;
+    margin: 2rem 0 !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    font-size: 18px !important;
+}
+
+/* Quote alert header (the title like "NOTE", "TIP", etc.) */
+.quote-alert-header {
+    font-weight: 700 !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 1.15em !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* NOTE - Blue box with blue tint */
+.quote-alert-note,
+blockquote.quote-alert-note {
+    background: linear-gradient(135deg, var(--bg-note) 0%, var(--bg-secondary) 100%) !important;
+    border-color: rgba(92, 147, 237, 0.4) !important;
+    border-left-color: var(--info) !important;
+    box-shadow: 0 2px 8px rgba(92, 147, 237, 0.2) !important;
+}
+
+.quote-alert-note .quote-alert-header {
+    color: var(--info) !important;
+}
+
+/* TIP - Green box with green tint */
+.quote-alert-tip,
+blockquote.quote-alert-tip {
+    background: linear-gradient(135deg, var(--bg-tip) 0%, var(--bg-secondary) 100%) !important;
+    border-color: rgba(71, 213, 166, 0.4) !important;
+    border-left-color: var(--success) !important;
+    box-shadow: 0 2px 8px rgba(71, 213, 166, 0.2) !important;
+}
+
+.quote-alert-tip .quote-alert-header {
+    color: var(--success) !important;
+}
+
+/* WARNING - Orange box with orange tint */
+.quote-alert-warning,
+blockquote.quote-alert-warning {
+    background: linear-gradient(135deg, var(--bg-warning) 0%, var(--bg-secondary) 100%) !important;
+    border-color: rgba(215, 172, 97, 0.4) !important;
+    border-left-color: var(--warning) !important;
+    box-shadow: 0 2px 8px rgba(215, 172, 97, 0.2) !important;
+}
+
+.quote-alert-warning .quote-alert-header {
+    color: var(--warning) !important;
+}
+
+/* CAUTION/DANGER - Red box with red tint */
+.quote-alert-caution,
+.quote-alert-danger,
+blockquote.quote-alert-caution,
+blockquote.quote-alert-danger {
+    background: linear-gradient(135deg, var(--bg-danger) 0%, var(--bg-secondary) 100%) !important;
+    border-color: rgba(255, 128, 128, 0.4) !important;
+    border-left-color: var(--danger) !important;
+    box-shadow: 0 2px 8px rgba(255, 128, 128, 0.2) !important;
+}
+
+.quote-alert-caution .quote-alert-header,
+.quote-alert-danger .quote-alert-header {
+    color: var(--danger) !important;
+}
+
+/* IMPORTANT - Purple (if needed) */
+.quote-alert-important,
+blockquote.quote-alert-important {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.15) 0%, var(--bg-secondary) 100%) !important;
+    border-color: rgba(199, 125, 255, 0.4) !important;
+    border-left-color: #c77dff !important;
+    box-shadow: 0 2px 8px rgba(199, 125, 255, 0.2) !important;
+}
+
+.quote-alert-important .quote-alert-header {
+    color: #c77dff !important;
+}
+
+/* Regular blockquotes (not quote-alert) */
+blockquote:not([class*="quote-alert"]) {
+    background-color: var(--bg-secondary) !important;
+    border-left: 4px solid var(--primary) !important;
+    padding: 1rem 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-style: italic !important;
+}
+
+/* ==================== NAVIGATION BAR ==================== */
+.navbar,
+.navbar-dark,
+nav:not(.sidebar) {
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: var(--text-primary) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+}
+
+.btn:hover {
+    background-color: var(--border-color) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    color: #000 !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light) !important;
+}
+
+/* ==================== FORMS ==================== */
+input,
+textarea,
+select,
+.form-control {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(170, 219, 191, 0.1) !important;
+}
+
+/* ==================== CARDS ==================== */
+.card {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+}
+
+.card-header {
+    background-color: var(--bg-code) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: var(--bg-secondary) !important;
+    border-top: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* ==================== HIDE LINE NUMBERS IN EDITOR ==================== */
+/* OtterWiki uses CodeMirror 5 - different approach */
+
+/* Make the gutter width 0 */
+.CodeMirror-gutters {
+    width: 0 !important;
+    min-width: 0 !important;
+}
+
+/* Hide line number elements */
+.CodeMirror-linenumber {
+    display: none !important;
+    width: 0 !important;
+}
+
+/* Remove all gutter-related elements */
+.CodeMirror-gutter-wrapper {
+    left: 0 !important;
+}
+
+/* Ensure content starts at the left edge */
+.CodeMirror-lines {
+    padding-left: 4px !important;
+}
+
+.CodeMirror-line {
+    padding-left: 4px !important;
+}
+
+
+
+/* ==================== MISC ==================== */
+hr {
+    border-color: var(--border-color) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Lists */
+ul, ol {
+    color: var(--text-primary) !important;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Search */
+.search-box,
+.search-input {
+    background-color: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .container,
+    .content,
+    main,
+    article,
+    .otter-content {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    p, li, td, th,
+    .otter-content p,
+    .otter-content li {
+        font-size: 17px !important;
+    }
+}
+
+
+/* ============= ADDED TO TRY TO FIX THE EDITOR =========== */
+
+/* ==================== EDITOR FIXES (CodeMirror) ==================== */
+
+/* 1. Reset the global 'pre' styles that are breaking the editor lines */
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 4px !important; /* Restore standard tight padding */
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+/* 2. Reset global table/input styles that might leak into the editor UI */
+.CodeMirror table,
+.CodeMirror tr,
+.CodeMirror td,
+.CodeMirror th,
+.CodeMirror input,
+.CodeMirror textarea {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. Theme the Editor Container to match Mint & Charcoal */
+.CodeMirror {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    font-family: 'Fira Code', monospace !important;
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+    padding: 10px 0 !important;
+    height: auto !important; /* Ensures editor expands correctly */
+}
+
+/* 4. Style the Line Number Gutter */
+.CodeMirror-gutters {
+    background-color: var(--bg-secondary) !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+.CodeMirror-linenumber {
+    color: var(--text-muted) !important;
+    padding-right: 10px !important;
+}
+
+/* 5. Cursor and Selection */
+.CodeMirror-cursor {
+    border-left: 2px solid var(--primary) !important;
+}
+
+.CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selected {
+    background-color: rgba(255, 154, 86, 0.2) !important; /* Primary orange with opacity */
+}
