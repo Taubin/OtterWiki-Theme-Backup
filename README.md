@@ -1,4 +1,4 @@
-# OtterWiki "Mint & Charcoal" Theme
+# OtterWiki "Amber Gold & Charcoal" Theme
 
 A custom CSS theme for [OtterWiki](https://otterwiki.com/) featuring a polished "Amber Gold & Charcoal" dark mode. 
 
