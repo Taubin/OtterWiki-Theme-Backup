@@ -1,6 +1,6 @@
 # OtterWiki "Mint & Charcoal" Theme
 
-A custom CSS theme for [OtterWiki](https://otterwiki.com/) featuring a polished "Mint & Charcoal" dark mode. 
+A custom CSS theme for [OtterWiki](https://otterwiki.com/) featuring a polished "Amber Gold & Charcoal" dark mode. 
 
 ## Features
 * **Color Palette:** Soft charcoal backgrounds (`#1a1d23`) with vibrant orange accents (`#ff9a56`).
